@@ -7,7 +7,6 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 io.on("connection", socket => {
-  console.log("youhou");
   socket.on("msg", data => {
     socket.broadcast.emit("message", "message recu");
     console.log(data);
